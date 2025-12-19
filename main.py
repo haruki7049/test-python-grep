@@ -1,14 +1,25 @@
 import click
 import os
+import termcolor
 
 
 class Grep:
     @staticmethod
     def grep_from_str(text: str, target: str):
-        lines = text.splitlines()
+        lines: list[str] = text.splitlines()
+
         for line in lines:
             if target in line:
-                print(line)
+                # To print the line with colored target term, Split line by target term
+                terms: list[str] = line.partition(target)
+
+                for term in terms:
+                    if term is target:
+                        termcolor.cprint(term, 'red', end='')
+                    else:
+                        print(term, end='')
+
+                print()
 
 
 class FileReader:
