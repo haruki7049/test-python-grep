@@ -1,5 +1,5 @@
 [project]
-name = "python-grep"
+name = "test-python-grep"
 version = "0.1.0"
 description = "A CLI grep command by Python"
 readme = "README.md"
