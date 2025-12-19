@@ -39,7 +39,7 @@ class FileReader:
 @click.option("--colored-output", is_flag=True)
 def main(path: str, target: str, colored_output: bool):
     context = FileReader.read_path(path)
-    Grep.grep_from_str(context, target, color)
+    Grep.grep_from_str(context, target, colored_output)
 
 
 if __name__ == "__main__":
